@@ -8,8 +8,17 @@ void moverBispo(int casas)
 {
     if (casas <= 0)
         return;
-    printf("Bispo: Cima\n");
-    printf("Bispo: Direita\n");
+
+    // Loops aninhados: cada passo do bispo = 1 "Cima" + 1 "Direita"
+    for (int i = 0; i < 1; i++)
+    {
+        for (int j = 0; j < 1; j++)
+        {
+            printf("Bispo: Cima\n");
+            printf("Bispo: Direita\n");
+        }
+    }
+
     moverBispo(casas - 1);
 }
 
