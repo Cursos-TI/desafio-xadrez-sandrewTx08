@@ -22,7 +22,6 @@ void moverBispo(int casas)
     moverBispo(casas - 1);
 }
 
-// Função recursiva da Torre
 void moverTorre(int casas)
 {
     if (casas <= 0)
@@ -31,7 +30,6 @@ void moverTorre(int casas)
     moverTorre(casas - 1);
 }
 
-// Função recursiva da Rainha
 void moverRainha(int casas)
 {
     if (casas <= 0)
@@ -42,12 +40,25 @@ void moverRainha(int casas)
 
 void moverCavalo(char direcao)
 {
-    for (int i = 0; i < 2; i++)
+    // Dois loops controlam a movimentação vertical e horizontal
+    for (int i = 0, j = 0; i < 3 && j < 2; i++, j++)
     {
+        // Se já subiu 2 vezes, interrompe o loop principal
+        if (i == 2)
+        {
+            break;
+        }
+
         printf("Cavalo: Cima\n");
+
+        // Condição extra com continue para ignorar caso inválido
+        if (j < 0)
+        {
+            continue;
+        }
     }
 
-    // Escolha da direção lateral
+    // Movimento lateral controlado com switch
     switch (direcao)
     {
     case 'E':
