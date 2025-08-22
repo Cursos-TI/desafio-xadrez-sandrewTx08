@@ -31,17 +31,24 @@ void moverRainha(int casas)
     moverRainha(casas - 1);
 }
 
-void moverCavalo()
+void moverCavalo(char direcao)
 {
-    printf("\nMovimento do Cavalo\n");
-    // movimento em L = 2 pra cima + 1 pra direita
     for (int i = 0; i < 2; i++)
     {
         printf("Cavalo: Cima\n");
     }
-    for (int j = 0; j < 1; j++)
+
+    // Escolha da direção lateral
+    switch (direcao)
     {
+    case 'E':
+        printf("Cavalo: Esquerda\n");
+        break;
+    case 'D':
         printf("Cavalo: Direita\n");
+        break;
+    default:
+        printf("Cavalo: Direcao invalida (use 'E' ou 'D')\n");
     }
 }
 
@@ -70,7 +77,7 @@ int main()
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
-    printf("Movimento do Bispo\n");
+    printf("\nMovimento do Bispo\n");
     moverBispo(5);
 
     printf("\nMovimento da Torre\n");
@@ -79,8 +86,13 @@ int main()
     printf("\nMovimento da Rainha\n");
     moverRainha(8);
 
-    printf("\nMovimento do Cavalo\n");
-    moverCavalo();
+    printf("\nMovimento do Cavalo (direita)\n");
+    // Cavalo em L para a direita
+    moverCavalo('D');
+
+    // Cavalo em L para a esquerda
+    printf("\nMovimento do Cavalo (esquerda)\n");
+    moverCavalo('E');
 
     return 0;
 }
